@@ -22,4 +22,11 @@ public class StudentServiceImpl implements IStudentService{
 return studentRepository.findAll();
 
     }
+
+    @Override
+    public void saveStudent(Student student) {
+
+        studentRepository.save(student);
+
+    }
 }

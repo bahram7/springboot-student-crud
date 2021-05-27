@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Student Page</title>
+
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
+
+
 </head>
 <body>
-<div align="center">
-<h1>Students List</h1>
-<table border="2px solid blue" >
+
+<div class="container my-2">
+    <h1>Students List</h1>
+    <a th:href="@{/newStudent}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+
+    <table border="1px solid blue" class="table table-striped table-responsive-md" >
 
     <thead>
     <tr>
