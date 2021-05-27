@@ -43,4 +43,12 @@ public class StudentServiceImpl implements IStudentService {
         }
         return student;
     }
+
+    @Override
+    public void deleteStudentById(long id) {
+
+        studentRepository.deleteById(id);
+
+
+    }
 }

@@ -8,10 +8,9 @@
     <title>Student Page</title>
 
     <link rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
-
 
 
 </head>
@@ -22,31 +21,31 @@
     <hr>
     <a th:href="@{/newStudent}" class="btn btn-primary btn-sm mb-3">Add Student</a>
 
-    <table border="1px solid blue" class="table table-striped table-responsive-md" >
+    <table border="1px"  class="table table-striped table-responsive-md">
 
-    <thead>
-    <tr>
-<th>Name</th>
-<th>Family</th>
-<th>Email</th>
-<th>Action</th>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Family</th>
+            <th>Email</th>
+            <th>Action</th>
 
-    </tr>
+        </tr>
 
-    </thead>
+        </thead>
 
-    <tbody>
-<tr th:each="student: ${listStudents}">
+        <tbody>
+        <tr th:each="student: ${listStudents}">
 
-    <td th:text="${student.name}"></td>
-    <td th:text="${student.family}"></td>
-    <td th:text="${student.email}"></td>
-<td> <a th:href="@{/updateForm/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
-<!-- <a th:href="@{/updateForm/{id}(id=${student.id})}" class="btn btn-primary">Delete</a> </td>-->
-</tr>
-    </tbody>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.family}"></td>
+            <td th:text="${student.email}"></td>
+            <td><a th:href="@{/updateForm/{id}(id=${student.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteStudent/{id}(id=${student.id})}" class="btn btn-danger">Delete</a></td>
+        </tr>
+        </tbody>
 
-</table>
+    </table>
 </div>
 </body>
 </html>

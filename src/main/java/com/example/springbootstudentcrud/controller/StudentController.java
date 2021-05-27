@@ -49,6 +49,18 @@ Student student=studentService.getStudentById(id);
 model.addAttribute("student",student);
 return "update student";
 
+    }
+
+    @GetMapping("/deleteStudent/{id}")
+    public String deleteStudent(@PathVariable(value = "id")long id){
+
+        studentService.deleteStudentById(id);
+
+        return "redirect:/";
+
+
+
+
 
     }
 
