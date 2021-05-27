@@ -10,24 +10,25 @@
           crossorigin="anonymous">
 
 
+
 </head>
 <body>
-
 <div class="container">
     <h1>Student</h1>
     <hr>
-    <h2>Save Student</h2>
+    <h2>Update Student</h2>
 
     <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post">
-        <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{family}" placeholder="Student Family" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{email}" placeholder="Student Email" class="form-control mb-4 col-4">
-        <button type="submit" class="btn btn-info col-2">Save Student</button>
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{name}"  class="form-control mb-4 col-4">
+        <input type="text" th:field="*{family}"  class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}"  class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Update Student</button>
 
     </form>
     <hr>
     <a th:href="@{/}">Home</a>
-</div>
 
+</div>
 </body>
 </html>
