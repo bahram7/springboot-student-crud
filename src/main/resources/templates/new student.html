@@ -18,10 +18,12 @@
     <hr>
     <h2>Save Student</h2>
 
-    <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post">
-        <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{family}" placeholder="Student Family" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{email}" placeholder="Student Email" class="form-control mb-4 col-4">
+    <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post" enctype="multipart/form-data">
+        <input type="text" th:field="*{name}" placeholder="Student Name" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{family}" placeholder="Student Family" class="form-control mb-4 col-4"/>
+        <input type="text" th:field="*{email}" placeholder="Student Email" class="form-control mb-4 col-4"/>
+        <input type="file" name="image" accept="image/png, image/jpeg" />
+
         <button type="submit" class="btn btn-info col-2">Save Student</button>
 
     </form>

@@ -28,4 +28,18 @@ public class Student {
 
     @Column(name = "email")
     private String email;
+    
+    @Column(name = "image",nullable = true,length = 64)
+    private String photos;
+
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (photos == null || id == null) return null;
+
+        return "/student-photos/" + id + "/" + photos;
+    }
+
+
+
 }

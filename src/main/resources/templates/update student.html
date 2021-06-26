@@ -10,7 +10,6 @@
           crossorigin="anonymous">
 
 
-
 </head>
 <body>
 <div class="container">
@@ -18,11 +17,13 @@
     <hr>
     <h2>Update Student</h2>
 
-    <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post">
+    <form action="#" th:action="@{/saveStudent}" th:object="${student}" method="post" enctype="multipart/form-data">
+
         <input type="hidden" th:field="*{id}">
-        <input type="text" th:field="*{name}"  class="form-control mb-4 col-4">
-        <input type="text" th:field="*{family}"  class="form-control mb-4 col-4">
-        <input type="text" th:field="*{email}"  class="form-control mb-4 col-4">
+        <input type="text" th:field="*{name}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{family}" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" class="form-control mb-4 col-4">
+        <input type="file" name="image" accept="image/png, image/jpeg" />
         <button type="submit" class="btn btn-info col-2">Update Student</button>
 
     </form>
